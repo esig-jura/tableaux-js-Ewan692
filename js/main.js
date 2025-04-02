@@ -1,6 +1,6 @@
 /**
- * @author Steve Fallet
- * @since 2022.09.06
+ * @author Ewan Pfister
+ * @since 2025.04.02
  */
 
 'use strict';
@@ -37,3 +37,23 @@ const personnes = [
         localite: 'San Francisco',
     }
 ];
+
+const personsTable = document.getElementById('table');
+
+function afficherPersonnes() {
+    let result = '';
+
+    for (let i = 0; i < personnes.length; i++) {
+        result += `
+                <tr>
+                    <td>${personnes[i].nom}</td>
+                    <td>${personnes[i].prenom}</td>
+                    <td>${personnes[i].age}</td>
+                    <td>${personnes[i].localite}</td>
+                </tr>
+            `;
+    }
+    personsTable.innerHTML = result;
+}
+
+afficherPersonnes();
