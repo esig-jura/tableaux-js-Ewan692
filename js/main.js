@@ -56,4 +56,22 @@ function afficherPersonnes() {
     personsTable.innerHTML = result;
 }
 
+const champPrenom = document.getElementById('prenom');
+const champNom = document.getElementById('nom');
+const champAge = document.getElementById('age');
+const champLocalite = document.getElementById('localite');
+const formulaire = document.getElementById('form');
+
+formulaire.addEventListener('submit', function(event){
+    event.preventDefault(); // Stoppe l'envoi du formulaire
+
+    personnes.push({
+        prenom:champPrenom.value,
+        nom:champNom.value,
+        age:champAge.value,
+        localite:champLocalite.value
+    });
+    afficherPersonnes();
+});
+
 afficherPersonnes();
